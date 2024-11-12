@@ -1,0 +1,170 @@
+.pointer{
+    cursor: pointer;
+}
+
+.date-template{
+    .circle{
+        $date-size: 300px;
+        border: 1px solid black;
+        border-radius: 50%;
+        height: $date-size;
+        width: $date-size;
+        p{
+            line-height: 1;
+            margin-bottom: 0;
+            &#year{
+                font-size: 48px;
+            }
+            &#month{
+                font-size: 24px;
+            }
+            &#date{
+                font-size: 60px;
+            }
+        }
+    }
+}
+
+.time-template{
+    .circle{
+        $time-size: 400px;
+        position: relative;
+        width: $time-size;
+        height: $time-size;
+        #clock, #hour, #minute, #second{
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #clock{
+            position: absolute;
+            border: 1px dashed black;
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            span{
+                position: absolute;
+                font-size: 30px;
+                line-height: 30px;
+            }
+            .three{
+                right: 0;
+                top: 50%;
+                transform: translate(100%, -50%);
+            }
+            .six{
+                left: 50%;
+                bottom: 0;
+                transform: translate(-50%, 100%);
+            }
+            .nine{
+                left: 0%;
+                top: 50%;
+                transform: translate(-100%, -50%);
+            }
+            .twelve{
+                left: 50%;
+                top: 0;
+                transform: translate(-50%, -100%);
+            }
+        }
+        #hour{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 1px solid black;
+            top: calc(50% + 2px);
+            & .pointer{
+                position: absolute;
+                left: 50%;
+                top: 0%;
+                background: black;
+                width: 4px;
+                height: 50px;
+            }
+        }
+        #minute{
+            position: absolute;
+            width: 173px;
+            height: 173px;
+            & .left{
+                rotate: 30deg;
+                position: absolute;
+                top: 30%;
+                transform: translate(-50%, -50%);
+                transform-origin: center;
+                width: 2px;
+                height: 173px;
+                background: black;
+            }
+            & .right{
+                position: absolute;
+                rotate: -30deg;
+                top: 30%;
+                right: -1px;
+                transform: translate(-50%, -50%);
+                transform-origin: center;
+                width: 2px;
+                height: 173px;
+                background: black;
+            }
+            & .bottom{
+                position: absolute;
+                width: 173px;
+                height: 2px;
+                bottom: 34px;
+                background: black;
+            }
+            & .pointer{
+                position: absolute;
+                left: calc(50% - 2px);
+                top: -6%;
+                background: black;
+                width: 2px;
+                height: 100px;
+            }
+        }
+        #second{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            transform: translate(-50%, -50%) rotate(45deg);
+            & .pointer{
+                position: absolute;
+                transform-origin: top;
+                left: 0%;
+                top: 0%;
+                transform: translate(0%, 0%) rotate(-45deg);
+                height: 100% / 2 * sqrt(2);
+                width: 1px;
+                background: black;
+            }
+        }
+    }
+
+}
+
+#update{
+    $size: 32px;
+    width: $size;
+    height: $size;
+    bottom: 20px;
+    right: 20px;
+    line-height: $size;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 50%;
+    transition-duration: .2s;
+    &:hover{
+        background: black;
+        i{
+            color: white;
+        }
+    }
+    i{
+        transition-duration: .2s;
+        font-size: 20px;
+    }
+}
